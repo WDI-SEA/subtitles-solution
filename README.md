@@ -41,7 +41,7 @@ components.
 Here's a good way to tease numbers out of a string:
 <https://repl.it/ElF6/2>
 
-```
+```js
 var groceryString = "Bananas: $14.99,Apples: $12.22,Oranges: $0.25"
 
 // use .split() to create an array splitting the original string up by commas.
