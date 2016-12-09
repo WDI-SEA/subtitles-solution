@@ -7,22 +7,22 @@
   {
     duration: "00:00:05,580 --> 00:00:07,670",
     line1: "",
-    line2: "Sit down ladies.",
+    line2: "Hello, WDI",
   },
   {
     duration: "00:00:09,230 --> 00:00:14,440",
-    line1: "One moment. The Führer is feeding",
-    line2: "his dog. He'll see you in a short while.",
+    line1: "Please wait. Class almost over.",
+    line2: "We just have one more thing to show you.",
   },
   {
     duration: "00:00:16,520 --> 00:00:21,210",
-    line1: "Can you tell us... How are we supposed",
-    line2: "to address the Führer?",
+    line1: "How are we supposed to start this assignment?",
+    line2: "Can we work together?",
   },
   {
     duration: "00:00:22,250 --> 00:00:26,410",
-    line1: "The Führer first speaks to you",
-    line2: "and then you reply: Heil mein Führer.",
+    line1: "Yes. You can work together.",
+    line2: "You can do whatever you want.",
   },
   {
     duration: "00:00:26,410 --> 00:00:28,500",
