@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  if (localStorage.time !== undefined) {
+    var movie = $("video")[0];
+    movie.currentTime = localStorage.time;
+  }
   setInterval(printTime, 100);
 });
 
@@ -6,6 +10,8 @@ function printTime() {
   var movie = $("video")[0];
   var time = movie.currentTime;
   $("#time").text(time);
+
+  localStorage.time = time;
 
   displaySubtitle(time);
 }
