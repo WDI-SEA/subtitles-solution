@@ -1,76 +1,42 @@
-#Subtiles
-Solution for creating a site that shows subtitles over a movie. The
-subtitles are based off of the .srt subtitle format. The subtitles
-have been converted to JavaScript objects.
+# Angular Mongoose Subtitles
+Original Subtitle project: <https://github.com/WDI-SEA/subtitles-solution>
 
-### Original .srt Format
-```
-0
-00:00:36,830 --> 00:00:39,430
-Act as normal and calm
-as you can.
+Today we're converting an old project to use Angular and Mongoose. The site
+displays a short clip of a video and renders subtitles in front of the video.
+The old site always showed subtitles as defined in a JavaScript file.
 
-0
-00:00:40,470 --> 00:00:42,550
-I'll see if
-he has time for you.
+We're going to update the site so users can edit the subtitles to say whatever
+they want, and allow users to save their changes to a database. Our final site
+will have a homepage where it lists all the subtitle variations available and
+users can click which one they want to view with the video.
 
-```
+At a high level here's the pages our website will have:
+* **homepage** - displays a list of all subtitle variations.
+* **watch page** - a page that plays the video with one subtitle variation.
+* **edit page** - a page that allows users to edit a subtitle variation.
 
-### Translated JavaScript Objects
-```js
-var SUBTITLES = [
-  {
-    duration: "00:00:36,830 --> 00:00:39,430",
-    line1: "Act as normal and calm",
-    line2: "as you can.",
-  },
-  {
-    duration: "00:00:40,470 --> 00:00:42,550",
-    line1: "I'll see if",
-    line2: "he has time for you.",
-  }
-];
-```
+The homepage should include an option to create a new subtitle variation. Users
+should have the option to choose whether they want to create subtitles from
+a blank template, or copy another subtitle variation to use as a starting point.
 
-## Parsing Strings into Numbers
-You'll need to use JavaScript String methods and number parsing
-to manipulate timestamps into their hour, minute, second, milliseconds
-components.
+Angular is an effective choice for our front end work because we'll be able to
+easily display a list of all the current subtitles, allow users to change
+subtitles inline and instantly see the effect of their change.
 
-Here's a good way to tease numbers out of a string:
-<https://repl.it/ElF6/2>
+Mongoose is an effective choice for a database because we'll be able to
+easily store our complex subtitle JSON objects without putting too much
+effort into a database design.
 
-```js
-var groceryString = "Bananas: $14.99,Apples: $12.22,Oranges: $0.25"
+Good luck! Have fun.
 
-// use .split() to create an array splitting the original string up by commas.
-var items = groceryString.split(",");
+## Reading Current Video Time Inside Angular
+Angular and the video element may not play nicely together naturally. You'll
+probably need to use vanilla JavaScript to obtain a reference to the video
+element inside a controller, then use Angular's $interval service to constantly
+read the time.
 
-// just look at the banana description for now.
-var banana = items[0];
-
-// split the banana description into two halfs, and grab what's to
-// the right of the dollar sign.
-var price = banana.split("$")[1];
-
-// chop the price string in half across the decimal.
-// dollars end up at the first index.
-// cents end up at the second index.
-var dollars = price.split(".")[0];
-var cents = price.split(".")[1];
-
-// dollars and cents are still strings.
-// Use the parseInt(str, 10) command to convert them into base-10 actual numbers.
-dollars = parseInt(dollars, 10);
-cents = parseInt(cents, 10);
-```
-
-Read more about the original file format here:
-<https://en.wikipedia.org/wiki/SubRip#SubRip_text_file_format>
-
+Don't use jQuery!
 
 ## Licensing
 All content is licensed under a CC­BY­NC­SA 4.0 license.
 All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
-
