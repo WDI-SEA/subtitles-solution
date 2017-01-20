@@ -61,5 +61,3 @@ function timestampsToSeconds(timestamp) {
 
   return mm / 1000 + seconds + minutes * 60 + hours * 3600;
 }
-
-console.log(findSubtitle(82));

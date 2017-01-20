@@ -1,4 +1,4 @@
-﻿var SUBTITLES = [
+var SUBTITLES = [
   {
     duration: "00:00:00,380 --> 00:00:01,940",
     line1: "November 1942",
